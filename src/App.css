@@ -37,46 +37,30 @@
   }
 }
 
-ol,
-ul {
-  padding-left: 30px;
-}
-
 .board-row:after {
   clear: both;
   content: '';
   display: table;
 }
 
-.status {
-  margin-bottom: 10px;
-}
-
 .square {
   background: #fff;
   border: 1px solid #999;
+  border-radius: 5px;
   float: left;
-  font-size: 24px;
+  font-size: 60px;
   font-weight: bold;
-  line-height: 34px;
-  height: 100px;
-  margin-right: -1px;
-  margin-top: -1px;
+  line-height: 24px;
+  height: 120px;
+  margin-right: 4px;
+  margin-bottom: 4px;
   padding: 0;
   text-align: center;
-  width: 100px;
+  width: 120px;
 }
 
-.square--green {
-  background: green;
-}
-
-.square:focus {
-  outline: none;
-}
-
-.kbd-navigation .square:focus {
-  background: #ddd;
+.square-winner {
+  background: rgb(11, 240, 11);
 }
 
 .container {
@@ -87,7 +71,7 @@ ul {
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  width: 600px;
+  width: 750px;
   height: 100vh;
 }
 
@@ -101,7 +85,7 @@ ul {
 
 .game-history {
   width: 100%;
-  flex: 1.5;
+  flex: 1;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -111,35 +95,40 @@ ul {
 
 .game-name{
   font-size: 60px;
-  margin-bottom: 0px;
 }
 
 .game-result {
-  margin-top: 0px;
+  margin-top: -20px;
   font-size: 36px;
 }
 
 .game-board {
- margin-bottom: 120px;
+ margin-bottom: 90px;
 }
 
 .btn {
+  width: 200px;
   padding: 8px 16px;
   cursor: pointer;
   font-weight: bold;
   border: 1px solid black;
   border-radius: 10px;
-  font-size: 24px;
+  font-size: 16px;
   outline: none;
 }
 
 .btn-new-game{
+  width: 160px;
   background: red;
   color: white;
-  margin-bottom: 50px;
+  font-size: 24px;
+  margin-bottom: 0px;
 }
 
 .btn-sort{
+  width: 120px;
+  margin-top: 24px;
+  margin-bottom: 30px;
   padding: 4px 8px;
   font-size: 16px;
   background: blue;
@@ -147,8 +136,27 @@ ul {
   color: white;
 }
 
-.button--current {
+.game-history h2 {
+  font-size: 36px;
+  margin-top: 90px;
+}
+
+.move-history {
+  flex: 10;
+}
+
+.move-history button{
+  width: 200px;
+  height: 36px;
+  cursor: pointer;
+  margin-bottom: 6px;
+  font-size: 16px;
+  border: 1px solid black;
+}
+
+.btn-current {
   background-color: #12e919;
   color: #000;
+  font-size: 16px;
   font-weight: bold;
 }

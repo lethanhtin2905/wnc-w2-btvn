@@ -29,12 +29,7 @@ function Board(props) {
     const renderSquare = (i) => {
         const winnerClass =
             props.winnerSquares &&
-                (props.winnerSquares[0] === i ||
-                    props.winnerSquares[1] === i ||
-                    props.winnerSquares[2] === i)
-                ? 'square--green'
-                : '';
-
+                (props.winnerSquares[0] === i || props.winnerSquares[1] === i || props.winnerSquares[2] === i)?'square-winner' : '';
         return (
             <Square
                 winnerClass={winnerClass}
@@ -124,7 +119,7 @@ class Game extends React.Component {
             return (
                 <li key={move}>
                     <button
-                        className={move === currentStepNumber ? 'button--current button' : 'button'}
+                        className={move === currentStepNumber ? 'btn btn-current' : 'btn'}
                         onClick={() => this.jumpTo(move)}>
                         {`${desc} ${currentLocation}`}
                     </button>
@@ -135,9 +130,9 @@ class Game extends React.Component {
         let status;
 
         if (winner) {
-            status = `Winner ${winner}`;
+            status = `Winner: ${winner}`;
         } else if (history.length === 10) {
-            status = 'Draw. No one won.';
+            status = 'Ohhh! No one won.';
         } else {
             status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
         }
@@ -147,7 +142,7 @@ class Game extends React.Component {
                 <div className="game">
                     <div className="game-main">
                         <h1 className="game-name">Tic-Tac-Toe</h1>
-                        {/* <div className="game-result">{status}</div> */}
+                        <div className="game-result">{status}</div>
                         <button className="btn btn-new-game" onClick={() => this.reset()}>
                             New game
                         </button>
@@ -161,11 +156,12 @@ class Game extends React.Component {
                     </div>
 
                     <div className="game-history">
+                        <h2>History</h2>
                         <hr />
                         <button className="btn btn-sort" onClick={() => this.sortMoves()}>
                             Sort moves
                         </button>
-                        <ol>{isSort ? moves.reverse() : moves}</ol>
+                        <div className="move-history">{isSort ? moves.reverse() : moves}</div>
                     </div>
 
                 </div>
