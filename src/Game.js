@@ -1,5 +1,5 @@
 import React from "react";
-import './App.css'
+import './Game.css'
 
 function Square(props) {
     return (
@@ -132,7 +132,7 @@ class Game extends React.Component {
         if (winner) {
             status = `Winner: ${winner}`;
         } else if (history.length === 10) {
-            status = 'Ohhh! No one won.';
+            status = 'Draw! No one won.';
         } else {
             status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
         }
